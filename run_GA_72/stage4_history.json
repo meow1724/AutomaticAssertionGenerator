@@ -1,0 +1,262 @@
+{
+  "a_d_o_rel_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_d_o_reset_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_d_o_set": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_d_o_tracks": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_d_o_tracks_d_in_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_d_o_tracks_d_in_1_bit1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_d_o_tracks_d_in_1_bit2": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_d_o_tracks_d_in_1_r4": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_d_o_tracks_d_o_reg": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_010": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_011": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_100": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_101": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_110": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_reset_to_pstate_111": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_stable": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_nstate_trans_001_to_010_r4": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_nstate_trans_001_to_010_r4_alt": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_pstate_enable": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_pstate_reset": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_pstate_reset_r4": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_pstate_stable": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_pstate_trans_001_to_010_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_selection_buf_tracks": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_stay_000": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_trans_001_to_010_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_trans_010_to_011_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_trans_100_to_000": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_trans_100_to_000_sel": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_func": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_func_r4": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_wr_en_high_when_selection_high": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_low_when_selection_low": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_low_when_selection_low_r4": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_4"
+  },
+  "a_wr_en_rel": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_reset_r3": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_5_round_3"
+  },
+  "a_wr_en_set": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_tracks": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "a_wr_en_tracks_wr_en_reg": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_d_o_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_d_o_reach": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_d_o_reg_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_d_o_reg_reach": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_nstate_001": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_pstate_000": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_pstate_001": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_selection_buf_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_wr_en_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_wr_en_reach": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_wr_en_reg_1": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  },
+  "c_wr_en_reg_reach": {
+    "best_proven_depth": 20,
+    "first_proven_depth": 20,
+    "origin": "stage_4_initial"
+  }
+}

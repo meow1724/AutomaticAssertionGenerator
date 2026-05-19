@@ -1,0 +1,65 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63 (git sha1 70a11c6bf0e8dd669f56c7da3587f78b405138e2, clang++ 17.0.0 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `top'. Setting top module to top.
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+
+2.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      113 wires
+      221 wire bits
+       36 public wires
+       90 public wire bits
+        8 ports
+       22 port bits
+      109 cells
+       16   $and
+        5   $anyinit
+       18   $anyseq
+        1   $assert
+        2   $assume
+        8   $eq
+        3   $ff
+        1   $logic_and
+        1   $logic_not
+       16   $mux
+       18   $not
+       18   $pmux
+        2   $reduce_or
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module top.
+
+End of script. Logfile hash: b640830199, CPU: user 0.01s system 0.00s, MEM: 13.27 MB peak
+Yosys 0.63 (git sha1 70a11c6bf0e8dd669f56c7da3587f78b405138e2, clang++ 17.0.0 -fPIC -O3)
+Time spent: 62% 2x write_smt2 (0 sec), 24% 2x read_rtlil (0 sec), ...

@@ -1,0 +1,354 @@
+You are refining formal assertions for an RTL design. Some assertions FAIL BMC; help fix them.
+
+=== DESIGN CONTEXT ===
+Module: top; clock=clk; reset=rst (active_low)
+Description: The tbu module is a state-driven data processing unit designed to handle two sets of input data based on a selection signal. It selects between two 8-bit input data streams, processes them in a state-dependent manner, and outputs the processed bit. The module also generates a write enable signal to control the writing of the processed output to a memory or register outside the module.
+Assertable signals (only these may be on LHS of assert):
+  - d_o — The output signal carrying the processed bit from the selected input data stream. [reset: Reset to initial value]
+  - wr_en — A write enable signal indicating when the d_o output is valid and can be written to an external memory or register. [reset: Reset to initial value]
+  - d_o_reg
+  - wr_en_reg
+  - pstate
+  - nstate
+  - selection_buf
+
+=== ASSERTIONS ALREADY PROVEN (reference only — do NOT repeat in output) ===
+always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_o_reg: assert(d_o == $past(d_o_reg));
+always @(posedge clk) if (f_past_valid) a_wr_en_tracks_wr_en_reg: assert(wr_en == $past(wr_en_reg));
+always @(posedge clk) if (f_past_valid) a_pstate_stable: assert($stable(pstate) || (pstate != $past(pstate)));
+always @(posedge clk) if (f_past_valid) a_nstate_stable: assert($stable(nstate) || (nstate != $past(nstate)));
+always @(posedge clk) if (f_past_valid) a_selection_buf_tracks: assert(selection_buf == $past(selection));
+always @(posedge clk) if (f_past_valid) a_wr_en_tracks: assert(wr_en == $past(wr_en_reg));
+always @(posedge clk) if (f_past_valid) a_d_o_tracks: assert(d_o == $past(d_o_reg));
+a_d_o_reset_r3: assert(d_o == $past(d_in_1[0]));
+a_d_o_rel_r3: assert(d_o == $past(d_in_1[0]));
+a_wr_en_reset_r3: assert(wr_en == 1'b1);
+a_trans_001_to_010_r3: assert(pstate == 3'b010);
+a_trans_010_to_011_r3: assert(pstate == 3'b011);
+a_pstate_trans_001_to_010_r3: assert(pstate == 3'b010);
+
+=== FAILED ASSERTIONS (these need to be fixed or dropped) ===
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_wr_en_func: assert(wr_en == 1'b0);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_wr_en_rel: assert(wr_en == 1'b1);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_pstate_reset: assert(pstate == 3'b000);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_wr_en_low_when_selection_low: assert(wr_en == 1'b0);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_wr_en_high_when_selection_high: assert(wr_en == 1'b1);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_in_1: assert(d_o == $past(d_in_1[0]));
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_in_1_bit1: assert(d_o == $past(d_in_1[1]));
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_in_1_bit2: assert(d_o == $past(d_in_1[2]));
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_pstate_enable: assert(pstate == 3'b000);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_trans_100_to_000: assert(pstate == 3'b000);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_trans_100_to_000_sel: assert(pstate == 3'b000);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate: assert(nstate == 3'b001);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_010: assert(nstate == 3'b010);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_011: assert(nstate == 3'b011);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_100: assert(nstate == 3'b100);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_101: assert(nstate == 3'b101);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_110: assert(nstate == 3'b110);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_nstate_reset_to_pstate_111: assert(nstate == 3'b111);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_wr_en_set: assert(wr_en == 1'b1);
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_d_o_set: assert(d_o == $past(d_in_1[0]));
+// FAILED at step 0
+always @(posedge clk) if (f_past_valid) a_stay_000: assert(pstate == 3'b000);
+// FAILED at step 0
+a_d_o_func_r3: assert(d_o == $past(d_in_0[0]));
+// FAILED at step 0
+a_trans_000_to_001_r3: assert(pstate == 3'b001);
+// FAILED at step 0
+a_d_o_reg_reset_r3: assert(d_o_reg == $past(d_in_1[0]));
+// FAILED at step 0
+a_wr_en_reg_reset_r3: assert(wr_en_reg == 1'b1);
+// FAILED at step 0
+a_d_o_reg_tracks_r3: assert(d_o == d_o_reg);
+// FAILED at step 0
+a_wr_en_reg_tracks_r3: assert(wr_en == wr_en_reg);
+// FAILED at step 0
+a_nstate_reset_r3: assert(nstate == 3'b000);
+// FAILED at step 0
+a_pstate_trans_000_to_001_r3: assert(pstate == 3'b001);
+
+=== COUNTEREXAMPLE INPUT SEQUENCES (why each failed) ===
+// Counterexample inputs for a_wr_en_func (failed at step 0):
+  cycle 0: d_in_0=8'b00000000 enable=1'b0 d_in_1=8'b00000001 rst=1'b0 selection=1'b0
+  cycle 1: d_in_0=8'b00000000 enable=1'b0 d_in_1=8'b00000000 rst=1'b0 selection=1'b1
+
+// Counterexample inputs for a_wr_en_rel (failed at step 0):
+  cycle 0: d_in_0=8'b00000000 enable=1'b0 rst=1'b0 d_in_1=8'b00000001 selection=1'b0
+  cycle 1: d_in_0=8'b00000000 enable=1'b0 rst=1'b0 d_in_1=8'b00000001 selection=1'b0
+
+// Counterexample inputs for a_pstate_reset (failed at step 0):
+  cycle 0: selection=1'b0 d_in_0=8'b00000001 enable=1'b1 d_in_1=8'b00000001 rst=1'b0
+  cycle 1: selection=1'b0 d_in_0=8'b00000001 enable=1'b1 d_in_1=8'b00000000 rst=1'b1
+  cycle 2: selection=1'b1 d_in_0=8'b00000000 enable=1'b0 d_in_1=8'b01001101 rst=1'b1
+  cycle 3: selection=1'b0 d_in_0=8'b00000001 enable=1'b1 d_in_1=8'b00000001 rst=1'b0
+
+// Counterexample inputs for a_wr_en_low_when_selection_low (failed at step 0):
+  cycle 0: d_in_1=8'b00000001 enable=1'b0 d_in_0=8'b00000000 selection=1'b0 rst=1'b0
+  cycle 1: d_in_1=8'b00000000 enable=1'b0 d_in_0=8'b00000000 selection=1'b1 rst=1'b0
+
+// Counterexample inputs for a_wr_en_high_when_selection_high (failed at step 0):
+  cycle 0: d_in_1=8'b00000001 selection=1'b0 enable=1'b0 d_in_0=8'b00000000 rst=1'b0
+  cycle 1: d_in_1=8'b00000001 selection=1'b0 enable=1'b0 d_in_0=8'b00000000 rst=1'b0
+
+// Counterexample inputs for a_d_o_tracks_d_in_1 (failed at step 0):
+  cycle 0: enable=1'b0 d_in_0=8'b00000000 d_in_1=8'b00000000 selection=1'b1 rst=1'b0
+  cycle 1: enable=1'b0 d_in_0=8'b00000000 d_in_1=8'b00000000 selection=1'b0 rst=1'b0
+
+// Counterexample inputs for a_d_o_tracks_d_in_1_bit1 (failed at step 0):
+  cycle 0: selection=1'b0 d_in_1=8'b00000001 rst=1'b0 enable=1'b0 d_in_0=8'b00000000
+  cycle 1: selection=1'b0 d_in_1=8'b00000011 rst=1'b0 enable=1'b0 d_in_0=8'b00000000
+
+// Counterexample inputs for a_d_o_tracks_d_in_1_bit2 (failed at step 0):
+  cycle 0: selection=1'b0 d_in_1=8'b00000001 d_in_0=8'b00000000 enable=1'b0 rst=1'b0
+  cycle 1: selection=1'b0 d_in_1=8'b00000101 d_in_0=8'b00000000 enable=1'b0 rst=1'b0
+
+
+=== SIGNALS STILL LACKING A PASSING ASSERT ===
+  (all assertable signals have at least one passing assertion)
+
+=== RTL (authoritative) ===
+```verilog
+ 
+module top
+(
+   clk,
+   rst,
+   enable,
+   selection,
+   d_in_0,
+   d_in_1,
+   d_o,
+   wr_en
+);
+   input       clk;
+   input       rst;
+   input       enable;
+   input       selection;
+   input [7:0] d_in_0;
+   input [7:0] d_in_1;
+   output reg  d_o;
+   output reg  wr_en;
+   reg         d_o_reg;
+   reg         wr_en_reg;
+   reg   [2:0] pstate;
+   reg   [2:0] nstate;
+   reg         selection_buf;
+   always @(posedge clk)
+   begin
+      selection_buf  <= selection;
+      wr_en          <= wr_en_reg;
+      d_o            <= d_o_reg;
+   end
+   always @(posedge clk or negedge rst)
+   begin
+      if(rst==1'b0)
+         pstate   <= 3'b000;
+      else if(enable==1'b0)
+         pstate   <= 3'b000;
+      else if(selection_buf==1'b1 && selection==1'b0)
+         pstate   <= 3'b000;
+      else
+         pstate   <= nstate;
+   end
+   always @(*)
+   begin
+      case (pstate)
+         3'b000:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[0])
+                  1'b0: nstate   =  3'b000;
+                  1'b1: nstate   =  3'b001;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[0];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[0])
+                  1'b0: nstate   =  3'b000;
+                  1'b1: nstate   =  3'b001;
+               endcase
+           end
+         end
+         3'b001:
+         begin
+            if(selection==1'b0)
+             begin
+             wr_en_reg =  1'b0;
+               case(d_in_0[1])
+                  1'b0: nstate   =  3'b011;
+                  1'b1: nstate   =  3'b010;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[1];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[1])
+                  1'b0: nstate   =  3'b011;
+                  1'b1: nstate   =  3'b010;
+               endcase
+           end
+         end
+         3'b010:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[2])
+                  1'b0: nstate   =  3'b100;
+                  1'b1: nstate   =  3'b101;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[2];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[2])
+                  1'b0: nstate   =  3'b100;
+                  1'b1: nstate   =  3'b101;
+               endcase
+            end
+         end
+         3'b011:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[3])
+                  1'b0: nstate   =  3'b111;
+                  1'b1: nstate   =  3'b110;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[3]; 
+               wr_en_reg =  1'b1;
+               case(d_in_1[3])
+                  1'b0: nstate   =  3'b111;
+                  1'b1: nstate   =  3'b110;
+               endcase
+            end
+         end
+         3'b100:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[4])
+                  1'b0: nstate   =  3'b001;
+                  1'b1: nstate   =  3'b000;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[4];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[4])
+                  1'b0: nstate   =  3'b001;
+                  1'b1: nstate   =  3'b000;
+               endcase
+            end
+         end
+         3'b101:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[5])
+                  1'b0: nstate   =  3'b010;
+                  1'b1: nstate   =  3'b011;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[5];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[5])
+                  1'b0: nstate   =  3'b010;
+                  1'b1: nstate   =  3'b011;
+               endcase
+            end
+         end
+         3'b110:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[6])
+                  1'b0: nstate   =  3'b101;
+                  1'b1: nstate   =  3'b100;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[6];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[6])
+                  1'b0: nstate   =  3'b101;
+                  1'b1: nstate   =  3'b100;
+               endcase
+            end
+         end
+         3'b111:
+         begin
+            if(selection==1'b0)
+            begin
+               wr_en_reg =  1'b0;
+               case(d_in_0[7])
+                  1'b0: nstate   =  3'b110;
+                  1'b1: nstate   =  3'b111;
+               endcase
+            end
+            else
+            begin
+               d_o_reg   =  d_in_1[7];  
+               wr_en_reg =  1'b1;
+               case(d_in_1[7])
+                  1'b0: nstate   =  3'b110;
+                  1'b1: nstate   =  3'b111;
+               endcase
+            end
+         end
+      endcase
+   end
+endmodule
+
+
+```
+
+INSTRUCTIONS:
+1. Output ONLY new/replacement assertion code for the FAILED labels (and optional 2-3 NEW asserts
+   targeting the signals listed as 'STILL LACKING A PASSING ASSERT').
+2. Do NOT reprint the proven vault — it is concatenated automatically.
+3. Use the counterexample input sequence for each failure to add the exact guard condition
+   that would make the assertion hold (e.g. if ($past(rst) && $past(enable) && ...)).
+4. If an assertion is fundamentally wrong (contradicts the RTL), DROP it — don't force a fix.
+5. Each assertion MUST be wrapped in always @(posedge clk) begin ... end with an `if` guard
+   outside the assert(). Use f_past_valid before any $past().
+6. Use == not ===. No concurrent SVA (|-> |=> ##). No $isunknown. No property/endproperty.
+7. Give each output assertion a UNIQUE label (e.g., a_<signal>_<context>_r4).
+8. Output raw Verilog. No markdown, no backticks, no module header.

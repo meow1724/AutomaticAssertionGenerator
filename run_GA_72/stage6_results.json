@@ -1,0 +1,324 @@
+{
+  "assert_coverage_percent": 100.0,
+  "assert_covered_signals": [
+    "d_o",
+    "d_o_reg",
+    "nstate",
+    "pstate",
+    "selection_buf",
+    "wr_en",
+    "wr_en_reg"
+  ],
+  "assert_signals_covered_count": 7,
+  "assertable_signal_count": 7,
+  "cover_coverage_percent": 100.0,
+  "cover_covered_signals": [
+    "d_o",
+    "d_o_reg",
+    "nstate",
+    "pstate",
+    "selection_buf",
+    "wr_en",
+    "wr_en_reg"
+  ],
+  "cover_signals_covered_count": 7,
+  "coverage_note": "assert_coverage_percent = correctness (BMC-proven asserts). cover_coverage_percent = reachability witnesses only, NOT correctness. formal_coverage_percent is the union and kept for backward compatibility.",
+  "covered_assertable_signals": [
+    "d_o",
+    "d_o_reg",
+    "nstate",
+    "pstate",
+    "selection_buf",
+    "wr_en",
+    "wr_en_reg"
+  ],
+  "cumulative_passed_all_stages": 25,
+  "depth_breakdown": {
+    "proven_depth_eq1": 0,
+    "proven_depth_ge2": 25,
+    "proven_depth_unknown": 0,
+    "survived_with_depth_ge2": 22
+  },
+  "final_assert_count": 10,
+  "final_count": 22,
+  "final_cover_count": 12,
+  "formal_coverage_percent": 100.0,
+  "initial_count": 25,
+  "pairs_tested": 12,
+  "provenance_by_origin": {
+    "stage_4_initial": {
+      "first_passed": 19,
+      "subsumed": 3,
+      "survived_stage6": 16,
+      "vacuous": 0
+    },
+    "stage_5_round_4": {
+      "first_passed": 6,
+      "subsumed": 0,
+      "survived_stage6": 6,
+      "vacuous": 0
+    }
+  },
+  "signals_covered_count": 7,
+  "subsumed": [
+    {
+      "code": "always @(posedge clk) if (f_past_valid) a_pstate_stable: assert($stable(pstate) || (pstate != $past(pstate)));",
+      "label": "a_pstate_stable"
+    },
+    {
+      "code": "always @(posedge clk) if (f_past_valid) a_wr_en_tracks: assert(wr_en == $past(wr_en_reg));",
+      "label": "a_wr_en_tracks"
+    },
+    {
+      "code": "always @(posedge clk) if (f_past_valid) a_d_o_tracks: assert(d_o == $past(d_o_reg));",
+      "label": "a_d_o_tracks"
+    }
+  ],
+  "subsumed_removed": 3,
+  "surviving_properties": [
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_d_o_reach: cover(d_o == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_d_o_reach",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "d_o",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_wr_en_reach: cover(wr_en == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reach",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "wr_en",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "safety",
+      "code": "always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_o_reg: assert(d_o == $past(d_o_reg));",
+      "first_proven_depth": 20,
+      "label": "a_d_o_tracks_d_o_reg",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "d_o_reg",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "safety",
+      "code": "always @(posedge clk) if (f_past_valid) a_wr_en_tracks_wr_en_reg: assert(wr_en == $past(wr_en_reg));",
+      "first_proven_depth": 20,
+      "label": "a_wr_en_tracks_wr_en_reg",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "wr_en_reg",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_d_o_reg_reach: cover(d_o_reg == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_d_o_reg_reach",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "d_o_reg",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_wr_en_reg_reach: cover(wr_en_reg == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reg_reach",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "wr_en_reg",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_pstate_000: cover(pstate == 3'b000);",
+      "first_proven_depth": 20,
+      "label": "c_pstate_000",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "pstate",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "liveness",
+      "code": "always @(posedge clk) if (f_past_valid) a_nstate_stable: assert($stable(nstate) || (nstate != $past(nstate)));",
+      "first_proven_depth": 20,
+      "label": "a_nstate_stable",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "nstate",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_nstate_001: cover(nstate == 3'b001);",
+      "first_proven_depth": 20,
+      "label": "c_nstate_001",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "nstate",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "protocol",
+      "code": "always @(posedge clk) if (f_past_valid) a_selection_buf_tracks: assert(selection_buf == $past(selection));",
+      "first_proven_depth": 20,
+      "label": "a_selection_buf_tracks",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "selection_buf",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_selection_buf_1: cover(selection_buf == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_selection_buf_1",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "selection_buf",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_pstate_001: cover(pstate == 3'b001);",
+      "first_proven_depth": 20,
+      "label": "c_pstate_001",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "pstate",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_wr_en_1: cover(wr_en == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_wr_en_1",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "wr_en",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_wr_en_reg_1: cover(wr_en_reg == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reg_1",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "wr_en_reg",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_d_o_1: cover(d_o == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_d_o_1",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "d_o",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "reachability",
+      "code": "always @(posedge clk) if (f_past_valid) c_d_o_reg_1: cover(d_o_reg == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "c_d_o_reg_1",
+      "origin": "stage_4_initial",
+      "proven_depth": 20,
+      "signal": "d_o_reg",
+      "type": "cover"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "safety",
+      "code": "a_wr_en_func_r4: assert(wr_en == 1'b1);",
+      "first_proven_depth": 20,
+      "label": "a_wr_en_func_r4",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "wr_en",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "protocol",
+      "code": "a_wr_en_low_when_selection_low_r4: assert(wr_en == 1'b0);",
+      "first_proven_depth": 20,
+      "label": "a_wr_en_low_when_selection_low_r4",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "wr_en",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "protocol",
+      "code": "a_pstate_reset_r4: assert(pstate == 3'b000);",
+      "first_proven_depth": 20,
+      "label": "a_pstate_reset_r4",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "pstate",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "safety",
+      "code": "a_d_o_tracks_d_in_1_r4: assert(d_o == $past(d_in_1[0]));",
+      "first_proven_depth": 20,
+      "label": "a_d_o_tracks_d_in_1_r4",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "d_o",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "protocol",
+      "code": "a_nstate_trans_001_to_010_r4: assert(nstate == 3'b010);",
+      "first_proven_depth": 20,
+      "label": "a_nstate_trans_001_to_010_r4",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "nstate",
+      "type": "assert"
+    },
+    {
+      "bmc_depth": 20,
+      "classification": "protocol",
+      "code": "a_nstate_trans_001_to_010_r4_alt: assert(nstate == 3'b010);",
+      "first_proven_depth": 20,
+      "label": "a_nstate_trans_001_to_010_r4_alt",
+      "origin": "stage_5_round_4",
+      "proven_depth": 20,
+      "signal": "nstate",
+      "type": "assert"
+    }
+  ],
+  "vacuous": [],
+  "vacuous_removed": 0
+}

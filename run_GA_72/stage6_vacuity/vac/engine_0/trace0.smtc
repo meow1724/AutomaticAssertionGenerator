@@ -1,0 +1,33 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$593] false)
+assume (= [$auto$async2sync.cc:116:execute$597] true)
+assume (= [_witness_.anyinit_auto_proc_dlatch_cc_432_proc_dlatch_444] false)
+assume (= [_witness_.anyinit_procdff_582] #b100)
+assume (= [d_o] false)
+assume (= [f_past_valid] false)
+assume (= [selection_buf] false)
+assume (= [wr_en] true)
+
+state 0
+assume (= [clk] false)
+assume (= [d_in_0] #xb9)
+assume (= [d_in_1] #x48)
+assume (= [enable] true)
+assume (= [rst] true)
+assume (= [selection] true)
+
+state 1
+assume (= [clk] false)
+assume (= [d_in_0] #xfa)
+assume (= [d_in_1] #x01)
+assume (= [enable] false)
+assume (= [rst] true)
+assume (= [selection] false)
+
+state 2
+assume (= [clk] false)
+assume (= [d_in_0] #xb9)
+assume (= [d_in_1] #x48)
+assume (= [enable] true)
+assume (= [rst] true)
+assume (= [selection] true)

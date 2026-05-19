@@ -1,0 +1,8 @@
+# running in temp/src/
+read_verilog -sv dut_temp.sv
+prep -top top
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

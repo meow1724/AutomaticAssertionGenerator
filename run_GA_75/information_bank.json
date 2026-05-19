@@ -1,0 +1,235 @@
+{
+  "clock": "CLK_I",
+  "module_description": "The wb_master module is designed to act as a master controller for interfacing with a Wishbone bus, a popular bus architecture used in embedded systems for connecting different components such as CPUs, memory, and peripherals. The primary functions of this module include memory read and write operations, burst transfers, read-modify-write operations, and data width handling.",
+  "module_name": "top",
+  "reset": "RST_I",
+  "reset_polarity": "active_high",
+  "signals": [
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Clock input. The module operates on the rising edge of this clock.",
+      "reset_behavior": "No effect",
+      "rtl_name": "CLK_I",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Reset input. A high signal on this input resets the module.",
+      "reset_behavior": "Reset",
+      "rtl_name": "RST_I",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Acknowledge input. Indicates that the current transaction has been accepted or completed by the slave.",
+      "reset_behavior": "No effect",
+      "rtl_name": "ACK_I",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "address"
+      ],
+      "direction": "output",
+      "functional_description": "Address output. Specifies the address for read or write operations.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "ADR_O",
+      "type": "reg",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "GO"
+      ],
+      "direction": "output",
+      "functional_description": "Cycle output. Indicates an ongoing bus cycle.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "CYC_O",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Data input. The data being read from the slave during read operations.",
+      "reset_behavior": "No effect",
+      "rtl_name": "DAT_I",
+      "type": "wire",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "data",
+        "write_flag"
+      ],
+      "direction": "output",
+      "functional_description": "Data output. The data to be written to the slave during write operations.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "DAT_O",
+      "type": "reg",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Error input. Indicates an error in the transaction.",
+      "reset_behavior": "No effect",
+      "rtl_name": "ERR_I",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "Retry input. Indicates that the current transaction should be retried.",
+      "reset_behavior": "No effect",
+      "rtl_name": "RTY_I",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "selects"
+      ],
+      "direction": "output",
+      "functional_description": "Select output. Specifies which byte lanes are active for the current transaction.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "SEL_O",
+      "type": "reg",
+      "width": 4
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "GO"
+      ],
+      "direction": "output",
+      "functional_description": "Strobe output. Indicates a valid data transfer cycle.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "STB_O",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "write_flag"
+      ],
+      "direction": "output",
+      "functional_description": "Write enable output. Indicates whether the current operation is a write or read.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "WE_O",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": "A signal used to initiate a transaction.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "GO",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": "An integer used to indicate the end of a transaction cycle.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "cycle_end",
+      "type": "integer",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": "An integer holding the address for the current transaction.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "address",
+      "type": "integer",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "DAT_I",
+        "write_flag"
+      ],
+      "direction": null,
+      "functional_description": "An integer used to hold data being written to the bus or read from the bus.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "data",
+      "type": "integer",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": "An integer used to hold the byte select signals for write transactions.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "selects",
+      "type": "integer",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": "An integer indicating whether the current transaction is a write or read.",
+      "reset_behavior": "Reset to default",
+      "rtl_name": "write_flag",
+      "type": "integer",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "mem_sizes",
+      "type": "wire",
+      "width": 16
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "write_burst_buffer",
+      "type": "reg",
+      "width": 32
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "read_burst_buffer",
+      "type": "reg",
+      "width": 32
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-22T22:17:08" hostname="Archits-MacBook-Pro.local" package="vac" id="0" name="default" tests="1" errors="0" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+</testcase>
+<testcase classname="default" name="Property COVER in top at vac_dut.sv:215.9-215.70" time="0" type="COVER" location="vac_dut.sv:215.9-215.70" id="vac_a_nstate_trans_001_to_010_r4_alt" tracefile="engine_0/trace0.vcd">
+</testcase>
+<system-out>SBY 22:17:08 [vac] Removing directory '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_vacuity/vac'.
+SBY 22:17:08 [vac] Copy '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_vacuity/vac_dut.sv' to '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_vacuity/vac/src/vac_dut.sv'.
+SBY 22:17:08 [vac] engine_0: smtbmc z3
+SBY 22:17:08 [vac] base: starting process &quot;cd vac/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 22:17:08 [vac] base: finished (returncode=0)
+SBY 22:17:08 [vac] prep: starting process &quot;cd vac/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 22:17:08 [vac] prep: finished (returncode=0)
+SBY 22:17:08 [vac] smt2: starting process &quot;cd vac/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 22:17:08 [vac] smt2: finished (returncode=0)
+SBY 22:17:08 [vac] engine_0: starting process &quot;cd vac; yosys-smtbmc -s z3 --presat -c --noprogress -t 20  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Solver: z3
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Reached cover statement in step 2 at top: vac_a_nstate_trans_001_to_010_r4_alt
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 22:17:08 [vac] engine_0: ##   0:00:00  Status: passed
+SBY 22:17:08 [vac] engine_0: finished (returncode=0)
+SBY 22:17:08 [vac] engine_0: Status returned by engine: pass
+SBY 22:17:08 [vac] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:17:08 [vac] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:17:08 [vac] summary: engine_0 (smtbmc z3) returned pass
+SBY 22:17:08 [vac] summary: cover trace: vac/engine_0/trace0.vcd
+SBY 22:17:08 [vac] summary:   reached cover statement top.vac_a_nstate_trans_001_to_010_r4_alt at vac_dut.sv:215.9-215.70 step 2
+SBY 22:17:08 [vac] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

@@ -1,0 +1,294 @@
+{
+  "failed": [
+    {
+      "failed_step": "0",
+      "label": "a_d_o_reset_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_d_o_reset_r3: assert(d_o == $past(d_in_1[0]));",
+      "trace_file": "failed_traces/a_d_o_reset_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_d_o_reset_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_d_o_rel_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_d_o_rel_r3: assert(d_o == $past(d_in_1[0]));",
+      "trace_file": "failed_traces/a_d_o_rel_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_d_o_rel_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_wr_en_reset_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_wr_en_reset_r3: assert(wr_en == 1'b1);",
+      "trace_file": "failed_traces/a_wr_en_reset_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_wr_en_reset_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_trans_001_to_010_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_trans_001_to_010_r3: assert(pstate == 3'b010);",
+      "trace_file": "failed_traces/a_trans_001_to_010_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_trans_001_to_010_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_trans_010_to_011_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_trans_010_to_011_r3: assert(pstate == 3'b011);",
+      "trace_file": "failed_traces/a_trans_010_to_011_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_trans_010_to_011_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_pstate_trans_001_to_010_r3",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_pstate_trans_001_to_010_r3: assert(pstate == 3'b010);",
+      "trace_file": "failed_traces/a_pstate_trans_001_to_010_r3_trace.vcd",
+      "trace_tb_file": "failed_traces/a_pstate_trans_001_to_010_r3_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_d_o_tracks_d_in_0_r4",
+      "original_code": "a_d_o_tracks_d_in_0_r4: assert(d_o == $past(d_in_0[0]));",
+      "trace_file": "failed_traces/a_d_o_tracks_d_in_0_r4_trace.vcd",
+      "trace_tb_file": "failed_traces/a_d_o_tracks_d_in_0_r4_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_nstate_trans_000_to_001_r4",
+      "original_code": "a_nstate_trans_000_to_001_r4: assert(nstate == 3'b001);",
+      "trace_file": "failed_traces/a_nstate_trans_000_to_001_r4_trace.vcd",
+      "trace_tb_file": "failed_traces/a_nstate_trans_000_to_001_r4_trace_tb.v"
+    },
+    {
+      "failed_step": "0",
+      "label": "a_nstate_trans_000_to_001_r4_alt",
+      "original_code": "a_nstate_trans_000_to_001_r4_alt: assert(nstate == 3'b001);",
+      "trace_file": "failed_traces/a_nstate_trans_000_to_001_r4_alt_trace.vcd",
+      "trace_tb_file": "failed_traces/a_nstate_trans_000_to_001_r4_alt_trace_tb.v"
+    }
+  ],
+  "passed": [
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_d_o_reach",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_d_o_reach: cover(d_o == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reach",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_wr_en_reach: cover(wr_en == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_d_o_tracks_d_o_reg",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_d_o_tracks_d_o_reg: assert(d_o == $past(d_o_reg));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_wr_en_tracks_wr_en_reg",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_wr_en_tracks_wr_en_reg: assert(wr_en == $past(wr_en_reg));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_d_o_reg_reach",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_d_o_reg_reach: cover(d_o_reg == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reg_reach",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_wr_en_reg_reach: cover(wr_en_reg == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_pstate_stable",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_pstate_stable: assert($stable(pstate) || (pstate != $past(pstate)));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_pstate_000",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_pstate_000: cover(pstate == 3'b000);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_nstate_stable",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_nstate_stable: assert($stable(nstate) || (nstate != $past(nstate)));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_nstate_001",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_nstate_001: cover(nstate == 3'b001);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_selection_buf_tracks",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_selection_buf_tracks: assert(selection_buf == $past(selection));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_selection_buf_1",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_selection_buf_1: cover(selection_buf == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_pstate_001",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_pstate_001: cover(pstate == 3'b001);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_wr_en_tracks",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_wr_en_tracks: assert(wr_en == $past(wr_en_reg));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_wr_en_1",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_wr_en_1: cover(wr_en == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_wr_en_reg_1",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_wr_en_reg_1: cover(wr_en_reg == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_d_o_tracks",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) a_d_o_tracks: assert(d_o == $past(d_o_reg));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_d_o_1",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_d_o_1: cover(d_o == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "c_d_o_reg_1",
+      "origin": "stage_4_initial",
+      "original_code": "always @(posedge clk) if (f_past_valid) c_d_o_reg_1: cover(d_o_reg == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_wr_en_func_r4",
+      "origin": "stage_5_round_4",
+      "original_code": "a_wr_en_func_r4: assert(wr_en == 1'b1);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_wr_en_low_when_selection_low_r4",
+      "origin": "stage_5_round_4",
+      "original_code": "a_wr_en_low_when_selection_low_r4: assert(wr_en == 1'b0);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_pstate_reset_r4",
+      "origin": "stage_5_round_4",
+      "original_code": "a_pstate_reset_r4: assert(pstate == 3'b000);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_d_o_tracks_d_in_1_r4",
+      "origin": "stage_5_round_4",
+      "original_code": "a_d_o_tracks_d_in_1_r4: assert(d_o == $past(d_in_1[0]));",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_nstate_trans_001_to_010_r4",
+      "origin": "stage_5_round_4",
+      "original_code": "a_nstate_trans_001_to_010_r4: assert(nstate == 3'b010);",
+      "proven_depth": 20
+    },
+    {
+      "best_proven_depth": 20,
+      "bmc_depth": 20,
+      "first_proven_depth": 20,
+      "label": "a_nstate_trans_001_to_010_r4_alt",
+      "origin": "stage_5_round_4",
+      "original_code": "a_nstate_trans_001_to_010_r4_alt: assert(nstate == 3'b010);",
+      "proven_depth": 20
+    }
+  ]
+}

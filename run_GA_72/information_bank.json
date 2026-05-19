@@ -1,0 +1,147 @@
+{
+  "clock": "clk",
+  "module_description": "The tbu module is a state-driven data processing unit designed to handle two sets of input data based on a selection signal. It selects between two 8-bit input data streams, processes them in a state-dependent manner, and outputs the processed bit. The module also generates a write enable signal to control the writing of the processed output to a memory or register outside the module.",
+  "module_name": "top",
+  "reset": "rst",
+  "reset_polarity": "active_low",
+  "signals": [
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "The clock signal driving the synchronous operations within the module, including state transitions and data processing.",
+      "reset_behavior": "No effect",
+      "rtl_name": "clk",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "A reset signal that initializes the module's state and internal registers when asserted low.",
+      "reset_behavior": "Reset to initial state",
+      "rtl_name": "rst",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "An enable signal that allows the module to operate when high; when low, the module resets to its initial state.",
+      "reset_behavior": "Reset to initial state when low",
+      "rtl_name": "enable",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "A selection signal that determines which input data stream (d_in_0 or d_in_1) is to be processed.",
+      "reset_behavior": "No effect",
+      "rtl_name": "selection",
+      "type": "wire",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "The first data input stream to be selectively processed by the module.",
+      "reset_behavior": "No effect",
+      "rtl_name": "d_in_0",
+      "type": "wire",
+      "width": 8
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": "input",
+      "functional_description": "The second data input stream, an alternative to d_in_0, to be processed based on the selection signal.",
+      "reset_behavior": "No effect",
+      "rtl_name": "d_in_1",
+      "type": "wire",
+      "width": 8
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "selection",
+        "d_in_0",
+        "d_in_1"
+      ],
+      "direction": "output",
+      "functional_description": "The output signal carrying the processed bit from the selected input data stream.",
+      "reset_behavior": "Reset to initial value",
+      "rtl_name": "d_o",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [
+        "selection",
+        "d_in_0",
+        "d_in_1"
+      ],
+      "direction": "output",
+      "functional_description": "A write enable signal indicating when the d_o output is valid and can be written to an external memory or register.",
+      "reset_behavior": "Reset to initial value",
+      "rtl_name": "wr_en",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "d_o_reg",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "wr_en_reg",
+      "type": "reg",
+      "width": 1
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "pstate",
+      "type": "reg",
+      "width": 3
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "nstate",
+      "type": "reg",
+      "width": 3
+    },
+    {
+      "assertion_hints": [],
+      "dependencies": [],
+      "direction": null,
+      "functional_description": null,
+      "reset_behavior": null,
+      "rtl_name": "selection_buf",
+      "type": "reg",
+      "width": 1
+    }
+  ]
+}

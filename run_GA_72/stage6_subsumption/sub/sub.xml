@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-04-22T22:17:11" hostname="Archits-MacBook-Pro.local" package="sub" id="0" name="default" tests="1" errors="1" failures="0" time="0" skipped="1">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="ERROR"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+<error type="ERROR"/>
+</testcase>
+<testcase classname="default" name="Property ASSERT in top at sub_dut.sv:216.9-216.45" time="0" type="ASSERT" location="sub_dut.sv:216.9-216.45" id="sub_assert">
+<skipped />
+</testcase>
+<system-out>SBY 22:17:11 [sub] Removing directory '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_subsumption/sub'.
+SBY 22:17:11 [sub] Copy '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_subsumption/sub_dut.sv' to '/Users/ramarchit/Desktop/fmsv-project/pipeline_v4/run_GA_72/stage6_subsumption/sub/src/sub_dut.sv'.
+SBY 22:17:11 [sub] engine_0: smtbmc z3
+SBY 22:17:11 [sub] base: starting process &quot;cd sub/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 22:17:11 [sub] base: finished (returncode=0)
+SBY 22:17:11 [sub] prep: starting process &quot;cd sub/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 22:17:11 [sub] prep: finished (returncode=0)
+SBY 22:17:11 [sub] smt2: starting process &quot;cd sub/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 22:17:11 [sub] smt2: finished (returncode=0)
+SBY 22:17:11 [sub] engine_0: starting process &quot;cd sub; yosys-smtbmc -s z3 --presat --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Solver: z3
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Assumptions are unsatisfiable!
+SBY 22:17:11 [sub] engine_0: ##   0:00:00  Status: PREUNSAT
+SBY 22:17:11 [sub] engine_0: finished (returncode=1)
+SBY 22:17:11 [sub] engine_0: Status returned by engine: ERROR
+SBY 22:17:11 [sub] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:17:11 [sub] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:17:11 [sub] summary: engine_0 (smtbmc z3) returned ERROR
+SBY 22:17:11 [sub] summary: engine_0 did not produce any traces
+SBY 22:17:11 [sub] DONE (ERROR, rc=16)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

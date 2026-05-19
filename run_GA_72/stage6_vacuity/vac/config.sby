@@ -1,0 +1,13 @@
+[options]
+mode cover
+depth 20
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -sv vac_dut.sv
+prep -top top
+
+[files]
+vac_dut.sv

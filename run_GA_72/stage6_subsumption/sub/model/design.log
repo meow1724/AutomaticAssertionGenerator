@@ -1,0 +1,383 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.63 (git sha1 70a11c6bf0e8dd669f56c7da3587f78b405138e2, clang++ 17.0.0 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: sub_dut.sv
+Parsing SystemVerilog input from `sub_dut.sv' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \top
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 17 dead cases from process $proc$sub_dut.sv:43$8 in module top.
+Marked 25 switch rules as full_case in process $proc$sub_dut.sv:43$8 in module top.
+Marked 3 switch rules as full_case in process $proc$sub_dut.sv:32$2 in module top.
+Removed a total of 17 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 8 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\top.$proc$sub_dut.sv:210$21'.
+  Set init value: \f_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\top.$proc$sub_dut.sv:32$2'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~28 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\top.$proc$sub_dut.sv:210$21'.
+Creating decoders for process `\top.$proc$sub_dut.sv:213$18'.
+     1/2: \sub_assert_EN
+     2/2: \sub_assume_EN
+Creating decoders for process `\top.$proc$sub_dut.sv:211$17'.
+Creating decoders for process `\top.$proc$sub_dut.sv:43$8'.
+     1/43: $25\nstate[2:0]
+     2/43: $24\nstate[2:0]
+     3/43: $23\nstate[2:0]
+     4/43: $9\wr_en_reg[0:0]
+     5/43: $9\d_o_reg[0:0]
+     6/43: $22\nstate[2:0]
+     7/43: $21\nstate[2:0]
+     8/43: $20\nstate[2:0]
+     9/43: $8\wr_en_reg[0:0]
+    10/43: $8\d_o_reg[0:0]
+    11/43: $19\nstate[2:0]
+    12/43: $18\nstate[2:0]
+    13/43: $17\nstate[2:0]
+    14/43: $7\wr_en_reg[0:0]
+    15/43: $7\d_o_reg[0:0]
+    16/43: $16\nstate[2:0]
+    17/43: $15\nstate[2:0]
+    18/43: $14\nstate[2:0]
+    19/43: $6\wr_en_reg[0:0]
+    20/43: $6\d_o_reg[0:0]
+    21/43: $13\nstate[2:0]
+    22/43: $12\nstate[2:0]
+    23/43: $11\nstate[2:0]
+    24/43: $5\wr_en_reg[0:0]
+    25/43: $5\d_o_reg[0:0]
+    26/43: $10\nstate[2:0]
+    27/43: $9\nstate[2:0]
+    28/43: $8\nstate[2:0]
+    29/43: $4\wr_en_reg[0:0]
+    30/43: $4\d_o_reg[0:0]
+    31/43: $7\nstate[2:0]
+    32/43: $6\nstate[2:0]
+    33/43: $5\nstate[2:0]
+    34/43: $3\wr_en_reg[0:0]
+    35/43: $3\d_o_reg[0:0]
+    36/43: $4\nstate[2:0]
+    37/43: $3\nstate[2:0]
+    38/43: $2\nstate[2:0]
+    39/43: $2\wr_en_reg[0:0]
+    40/43: $2\d_o_reg[0:0]
+    41/43: $1\nstate[2:0]
+    42/43: $1\wr_en_reg[0:0]
+    43/43: $1\d_o_reg[0:0]
+Creating decoders for process `\top.$proc$sub_dut.sv:32$2'.
+     1/1: $0\pstate[2:0]
+Creating decoders for process `\top.$proc$sub_dut.sv:26$1'.
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\top.\wr_en_reg' from process `\top.$proc$sub_dut.sv:43$8'.
+No latch inferred for signal `\top.\nstate' from process `\top.$proc$sub_dut.sv:43$8'.
+Latch inferred for signal `\top.\d_o_reg' from process `\top.$proc$sub_dut.sv:43$8': $auto$proc_dlatch.cc:432:proc_dlatch$447
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\top.\f_past_valid' using process `\top.$proc$sub_dut.sv:211$17'.
+  created $dff cell `$procdff$580' with positive edge clock.
+Creating register for signal `\top.\pstate' using process `\top.$proc$sub_dut.sv:32$2'.
+  created $adff cell `$procdff$585' with positive edge clock and positive level reset.
+Creating register for signal `\top.\d_o' using process `\top.$proc$sub_dut.sv:26$1'.
+  created $dff cell `$procdff$586' with positive edge clock.
+Creating register for signal `\top.\wr_en' using process `\top.$proc$sub_dut.sv:26$1'.
+  created $dff cell `$procdff$587' with positive edge clock.
+Creating register for signal `\top.\selection_buf' using process `\top.$proc$sub_dut.sv:26$1'.
+  created $dff cell `$procdff$588' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `top.$proc$sub_dut.sv:210$21'.
+Found and cleaned up 1 empty switch in `\top.$proc$sub_dut.sv:213$18'.
+Removing empty process `top.$proc$sub_dut.sv:213$18'.
+Removing empty process `top.$proc$sub_dut.sv:211$17'.
+Found and cleaned up 25 empty switches in `\top.$proc$sub_dut.sv:43$8'.
+Removing empty process `top.$proc$sub_dut.sv:43$8'.
+Found and cleaned up 2 empty switches in `\top.$proc$sub_dut.sv:32$2'.
+Removing empty process `top.$proc$sub_dut.sv:32$2'.
+Removing empty process `top.$proc$sub_dut.sv:26$1'.
+Cleaned up 28 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~136 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 4 unused cells and 186 unused wires.
+<suppressed ~5 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 204 cells of `\top'.
+Finding duplicate cells in `\top'.
+Computing hashes of 139 cells of `\top'.
+Finding duplicate cells in `\top'.
+<suppressed ~195 debug messages>
+Removed a total of 65 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$299.
+    dead port 2/2 on $mux $procmux$297.
+    dead port 2/2 on $mux $procmux$275.
+    dead port 2/2 on $mux $procmux$265.
+    dead port 2/2 on $mux $procmux$255.
+    dead port 1/2 on $mux $procmux$253.
+    dead port 2/2 on $mux $procmux$242.
+    dead port 2/2 on $mux $procmux$240.
+    dead port 2/2 on $mux $procmux$220.
+    dead port 2/2 on $mux $procmux$211.
+    dead port 2/2 on $mux $procmux$202.
+    dead port 1/2 on $mux $procmux$200.
+    dead port 2/2 on $mux $procmux$190.
+    dead port 2/2 on $mux $procmux$188.
+    dead port 2/2 on $mux $procmux$400.
+    dead port 2/2 on $mux $procmux$170.
+    dead port 2/2 on $mux $procmux$162.
+    dead port 2/2 on $mux $procmux$154.
+    dead port 2/2 on $mux $procmux$388.
+    dead port 1/2 on $mux $procmux$152.
+    dead port 2/2 on $mux $procmux$143.
+    dead port 2/2 on $mux $procmux$141.
+    dead port 2/2 on $mux $procmux$125.
+    dead port 2/2 on $mux $procmux$376.
+    dead port 2/2 on $mux $procmux$118.
+    dead port 2/2 on $mux $procmux$111.
+    dead port 1/2 on $mux $procmux$374.
+    dead port 1/2 on $mux $procmux$109.
+    dead port 2/2 on $mux $procmux$101.
+    dead port 2/2 on $mux $procmux$99.
+    dead port 2/2 on $mux $procmux$85.
+    dead port 2/2 on $mux $procmux$361.
+    dead port 2/2 on $mux $procmux$79.
+    dead port 2/2 on $mux $procmux$73.
+    dead port 2/2 on $mux $procmux$359.
+    dead port 1/2 on $mux $procmux$71.
+    dead port 2/2 on $mux $procmux$64.
+    dead port 2/2 on $mux $procmux$62.
+    dead port 2/2 on $mux $procmux$50.
+    dead port 2/2 on $mux $procmux$45.
+    dead port 2/2 on $mux $procmux$40.
+    dead port 1/2 on $mux $procmux$38.
+    dead port 2/2 on $mux $procmux$32.
+    dead port 2/2 on $mux $procmux$335.
+    dead port 2/2 on $mux $procmux$30.
+    dead port 2/2 on $mux $procmux$324.
+    dead port 2/2 on $mux $procmux$313.
+    dead port 1/2 on $mux $procmux$311.
+Removed 48 multiplexer ports.
+<suppressed ~93 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    New ctrl vector for $pmux cell $procmux$432: { $procmux$439_CMP $procmux$438_CMP $procmux$437_CMP $procmux$436_CMP $procmux$435_CMP $procmux$434_CMP $procmux$433_CMP }
+  Optimizing cells in module \top.
+Performed a total of 1 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 91 cells of `\top'.
+Finding duplicate cells in `\top'.
+Computing hashes of 83 cells of `\top'.
+Finding duplicate cells in `\top'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 120 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~43 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    New ctrl vector for $pmux cell $procmux$423: $auto$opt_reduce.cc:137:opt_pmux$590
+  Optimizing cells in module \top.
+Performed a total of 1 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 84 cells of `\top'.
+Finding duplicate cells in `\top'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.7.14. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.15. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~36 debug messages>
+
+2.7.16. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+2.7.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 84 cells of `\top'.
+Finding duplicate cells in `\top'.
+Removed a total of 0 cells.
+
+2.7.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+2.7.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.7.20. Finished fast OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell top.$eq$sub_dut.sv:216$20 ($eq).
+Removed top 1 bits (of 3) from port B of cell top.$procmux$437_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell top.$procmux$438_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell top.$procmux$439_CMP0 ($eq).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Computing hashes of 84 cells of `\top'.
+Finding duplicate cells in `\top'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Executing SORT pass.
+
+2.13. Printing statistics.
+
+=== top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       89 wires
+      159 wire bits
+       16 public wires
+       34 public wire bits
+        8 ports
+       22 port bits
+       84 cells
+        1   $adff
+       16   $and
+        2   $check
+        4   $dff
+        1   $dlatch
+        8   $eq
+        1   $logic_and
+        1   $logic_not
+       13   $mux
+       17   $not
+       18   $pmux
+        2   $reduce_or
+
+2.14. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `top'. Setting top module to top.
+
+3.1. Analyzing design hierarchy..
+Top module:  \top
+
+3.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4. Executing jny backend.
+
+5. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: f4b7a3a9a6, CPU: user 0.02s system 0.00s, MEM: 16.62 MB peak
+Yosys 0.63 (git sha1 70a11c6bf0e8dd669f56c7da3587f78b405138e2, clang++ 17.0.0 -fPIC -O3)
+Time spent: 23% 7x opt_expr (0 sec), 19% 6x opt_clean (0 sec), ...
