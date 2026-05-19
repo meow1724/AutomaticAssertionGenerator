@@ -1,6 +1,6 @@
-# FMSV Pipeline v4 (C++)
+# LLM Based Formal Assertion Generation System (C++)
 
-**F**ormal **M**odel-checked **S**ystem **V**erification pipeline — a single C++ tool that takes an RTL design (`dut.v`) plus a natural-language specification (`spec.txt`) and produces a set of **bounded-model-check-proven SystemVerilog assertions** plus a human-readable verification report.
+**T**his system pipeline takes an RTL design (`dut.v`) plus a natural-language specification (`spec.txt`) and produces a set of **bounded-model-check-proven SystemVerilog assertions** plus a human-readable verification report.
 
 The pipeline is a cooperation between three things:
 
